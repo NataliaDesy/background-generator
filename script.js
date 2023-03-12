@@ -4,8 +4,8 @@ var color2 = document.querySelector(".color2");
 var body = document.getElementById("gradient");
 var randomBtn = document.getElementById("randomBtn");
 
-// body.style.background ="red";
-getGradient();
+
+//The getGradient function allows us to get the initial CSS linear gradient property.
 function getGradient() {
 	body.style.background = "linear-gradient(to right, "
 	 + color1.value 
@@ -22,19 +22,7 @@ function setGradient() {
 	 css.textContent = body.style.background + ";";
 }
 
-// color1.addEventListener("input", function() {
-// 	body.style.background = "linear-gradient(to right, "
-// 	 + color1.value 
-// 	 + ", " + color2.value + " )";
-// })
-
-// color2.addEventListener("input", function() {
-// 	body.style.background = "linear-gradient(to right, "
-// 	 + color1.value 
-// 	 + ", " + color2.value + " )";
-// })
-
-
+//allows us to generates some random numbers of rgb color
 function randomRgbColor() {
   let letters = "0123456789ABCDEF";
   let color = "#";
@@ -53,10 +41,9 @@ function setRandomGradient() {
     css.textContent = body.style.background + ";";
 }
 
-// Example
-console.log(randomRgbColor(), randomRgbColor()); // "rgb(22, 123, 4)"
 
-//REFACTORING THE CODES
+
 color1.addEventListener("input", setGradient);
 color2.addEventListener("input", setGradient);
 randomBtn.addEventListener("click", setRandomGradient);
+getGradient();
